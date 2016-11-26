@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.preference.PreferenceCategory android:title="@string/settings_general">
+        <android.support.v7.preference.Preference
+            android:key="pf_logout"
+            android:title="로그아웃"
+            android:enabled="true"
+            />
+        <android.support.v7.preference.Preference
+            android:key="pf_version_name"
+            android:title="앱 버전"
+            android:summary="가져오는 중.."
+            />
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>
