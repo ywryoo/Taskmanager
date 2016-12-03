@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class TodolistActivity extends AppCompatActivity {
+    BackPressCloseHandler backPressCloseHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,6 @@ public class TodolistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_todolist);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,9 +27,7 @@ public class TodolistActivity extends AppCompatActivity {
             startActivity(intent);
             }
         });
-        if(getSupportActionBar() != null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        backPressCloseHandler = new BackPressCloseHandler(this);
     }
 
     @Override
@@ -37,6 +35,11 @@ public class TodolistActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_todolist, menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        backPressCloseHandler.onBackPressed();
     }
 
     @Override
