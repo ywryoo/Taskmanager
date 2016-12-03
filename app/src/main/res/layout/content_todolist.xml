@@ -1,9 +1,35 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment"
-    android:name="kr.ryoo.app.taskmanager.TodolistActivityFragment"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:layout="@layout/fragment_todolist" />
+    android:layout_height="wrap_content"
+    android:id="@+id/card_todolist">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/card_task_name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textSize="30sp"
+            />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/todolist_edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/card_task_name"
+            android:text="수정"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/todolist_remove_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@+id/card_task_name"
+            android:layout_below="@+id/todolist_edit_button"
+            android:text="삭제"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
