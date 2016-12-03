@@ -60,8 +60,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="kr.ryoo.app.taskmanager.TodolistActivity" />
         </activity>
-        <activity android:name=".TodoAddActivity" />
-        <activity android:name=".TodoEditActivity"></activity>
+        <activity android:name=".TodoAddActivity"
+            android:label="@string/title_activity_todo_add"
+            android:parentActivityName=".TodolistActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="kr.ryoo.app.taskmanager.TodolistActivity" />
+        </activity>
+
+        <activity android:name=".TodoEditActivity"
+            android:label="@string/title_activity_todo_edit"
+            android:parentActivityName=".TodolistActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="kr.ryoo.app.taskmanager.TodolistActivity" />
+        </activity>
     </application>
 
 </manifest>
