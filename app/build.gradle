@@ -28,31 +28,14 @@ android {
         versionName "0.1.0"
         vectorDrawables.useSupportLibrary = true
     }
-    signingConfigs {
-        release {
-            storeFile file("release.jks")
-            storePassword "friendlypix"
-            keyAlias "friendlypix"
-            keyPassword "friendlypix"
-        }
-    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
-    productFlavors {
-        dev {
-        }
-        prod {
-            applicationId "pub.devrel.friendlypix"
-        }
-        dev2 {
-            applicationId "kr.ryoo.app.taskmanager"
-        }
-    }
+
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/DEPENDENCIES'
@@ -75,13 +58,13 @@ dependencies {
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:percent:25.0.1'
     compile 'com.android.support:preference-v7:25.0.1'
-    compile 'com.google.android.gms:play-services-auth:10.0.0'
-    compile 'com.google.android.gms:play-services-location:10.0.0'
-    compile 'com.google.firebase:firebase-storage:10.0.0'
-    compile 'com.google.firebase:firebase-common:10.0.0'
-    compile 'com.google.firebase:firebase-auth:10.0.0'
-    compile 'com.google.firebase:firebase-database:10.0.0'
-    compile 'com.google.firebase:firebase-crash:10.0.0'
+    compile 'com.google.android.gms:play-services-auth:10.0.1'
+    compile 'com.google.android.gms:play-services-location:10.0.1'
+    compile 'com.google.firebase:firebase-storage:10.0.1'
+    compile 'com.google.firebase:firebase-common:10.0.1'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.0.1'
     compile 'pub.devrel:easypermissions:0.1.7'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
