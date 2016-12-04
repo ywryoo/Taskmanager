@@ -17,6 +17,9 @@
 
 package kr.ryoo.app.taskmanager.Models;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class Author {
     private String full_name;
     private String profile_picture;

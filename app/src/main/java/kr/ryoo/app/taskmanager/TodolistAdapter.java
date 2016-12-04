@@ -41,17 +41,17 @@ public class TodolistAdapter extends RecyclerView.Adapter<TodolistAdapter.TodoVi
     public void onBindViewHolder(final TodolistAdapter.TodoViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.taskName.setText(tasks.get(position).getTaskName());
+        holder.taskName.setText(tasks.get(position).getName());
         holder.removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onRemoveButton(tasks.get(holder.getAdapterPosition()).getTaskName(), holder.getAdapterPosition());
+                listener.onRemoveButton(holder.getAdapterPosition());
             }
         });
         holder.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onEditButton(tasks.get(holder.getAdapterPosition()).getTaskName());
+                listener.onEditButton(holder.getAdapterPosition());
             }
         });
     }
@@ -72,7 +72,7 @@ public class TodolistAdapter extends RecyclerView.Adapter<TodolistAdapter.TodoVi
     }
 
     public interface OnTodolistClickListener {
-        void onRemoveButton(String name, int position);
-        void onEditButton(String name);
+        void onRemoveButton(int position);
+        void onEditButton(int position);
     }
 }
